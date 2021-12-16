@@ -1,3 +1,4 @@
+import axios from "axios"
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
@@ -19,8 +20,19 @@ export default function App() {
       return;
     }
 
-    console.log(userEmail);
-    console.log(userPassword);
+    console.log(userPassword)
+    axios
+      .post("http://localhost/api/auth/login", { email: userEmail, password: userPassword, device_name: "test" })
+      .then((rsp) => {
+        console.log(`Login Success`);
+        console.log(rsp.data);
+      })
+      .catch((err) => {
+        console.log("Login Failed");
+        console.log(err);
+        // console.log(err.response.status);
+        // console.log(err.response.data);
+      });
   }
 
   return (
