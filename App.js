@@ -22,16 +22,15 @@ export default function App() {
 
     console.log(userPassword)
     axios
-      .post("http://localhost/api/auth/login", { email: userEmail, password: userPassword, device_name: "test" })
+      .post("http://192.168.0.6:80/api/auth/login", { email: userEmail, password: userPassword, device_name: "test" })
       .then((rsp) => {
         console.log(`Login Success`);
         console.log(rsp.data);
       })
       .catch((err) => {
         console.log("Login Failed");
-        console.log(err);
-        // console.log(err.response.status);
-        // console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.data);
       });
   }
 
