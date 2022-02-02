@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 32,
   },
-  textInput: { marginBottom: 8, width: "100%" },
-  submitBtn: { marginTop: 16, width: "100%" },
+  textInput: { marginBottom: 8, width: "80%" },
+  submitBtn: { marginTop: 16, width: "80%" },
   submitBtnContent: { paddingVertical: 8 }
 
 });
